@@ -1,4 +1,6 @@
-import '../BNavigation/bottom_nav.dart';
+import 'dart:html';
+
+import 'package:hexcolor/hexcolor.dart';
 //import '../BNavigation/routes.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 //import '../flutter_flow/flutter_flow_util.dart';
@@ -9,6 +11,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 //import 'package:aryy_version3/main.dart';
 //import 'package:hexcolor/hexcolor.dart';
 import 'package:aryy_version3/styles/my_icons.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class HomePageWidget extends StatefulWidget {
   HomePageWidget({Key? key}) : super(key: key);
@@ -21,13 +24,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   TextEditingController? textController;
 
   //BARRA DE NAVEGACION
-  int index = 0;
-  BNavigator? myBNB;
+  //int index = 0;
+  //int currentIndex = 0;
+  //BNavigator? myBNB;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
 //BARRA DE NAVEGACION
-  @override
+  /* @override
   void initState() {
     textController = TextEditingController();
     myBNB = BNavigator(currentIndex: (i) {
@@ -36,41 +40,40 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       });
     });
     super.initState();
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: myBNB,
+      //bottomNavigationBar: myBNB,
       key: scaffoldKey,
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
         automaticallyImplyLeading: false,
         leading: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 5),
-            child: Image(
+          //padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 5),
+          padding: EdgeInsetsDirectional.fromSTEB(15, 10, 0, 10),
+          /* child: Image(
               image: AssetImage('assets/icons/ICONS_ISOTIPO.svg'),
               width: 100,
               height: 100,
-            )
-            /* child: SvgPicture.asset(
+            )*/
+          child: SvgPicture.asset(
             iconisotipo,
-            /*'assets/icons/ICONS_ISOTIPO.svg',*/
-
-            //'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/aryy-version1-2ra5ai/assets/hnjebhuvgdbu/ICONS_ISOTIPO.svg',
-            width: 100,
-            height: 100,
+            width: 40,
+            height: 40,
             //fit: BoxFit.cover,
-          ),*/
-            ),
+          ),
+        ),
         actions: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 5),
+            padding: EdgeInsetsDirectional.fromSTEB(0, 6, 0, 6),
             child: Container(
-              width: 100,
-              height: 40,
+              width: 80,
+              height: 20,
               decoration: BoxDecoration(
-                color: Color(0xFF7900FF),
+                color: HexColor("#7900ff"),
+                //color: Color(0xFF7900FF),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(25),
                   bottomRight: Radius.circular(0),
@@ -93,6 +96,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               color:
                                   FlutterFlowTheme.of(context).primaryBtnText,
                               fontWeight: FontWeight.normal,
+                              fontSize: 12,
                             ),
                       ),
                     ],
@@ -105,7 +109,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       Icon(
                         Icons.person_outline,
                         color: FlutterFlowTheme.of(context).primaryBtnText,
-                        size: 25,
+                        size: 15,
                       ),
                     ],
                   ),
@@ -127,7 +131,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(20, 40, 0, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(40, 50, 40, 0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -137,8 +141,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           style:
                               FlutterFlowTheme.of(context).bodyText1.override(
                                     fontFamily: 'Poppins',
-                                    color: Color(0xFF5101CC),
-                                    fontSize: 22,
+                                    color: HexColor("#7900ff"),
+                                    //color: Color(0xFF5101CC),
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.bold,
                                   ),
                         ),
                         Text(
@@ -146,7 +152,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           style:
                               FlutterFlowTheme.of(context).bodyText1.override(
                                     fontFamily: 'Poppins',
-                                    color: Color(0xFF4F565F),
+                                    color: HexColor("#999999"),
+                                    //color: Color(0xFF4F565F),
                                     fontSize: 20,
                                     fontWeight: FontWeight.normal,
                                   ),
@@ -281,7 +288,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           ),
                           child: Container(
                             width: 150,
-                            height: 100,
+                            height: 130,
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
                                 colors: [
@@ -322,6 +329,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
                                           .override(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.normal,
                                             fontFamily: 'Poppins',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBtnText,
@@ -332,6 +341,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
                                           .override(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold,
                                             fontFamily: 'Poppins',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBtnText,
@@ -356,7 +367,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           ),
                           child: Container(
                             width: 150,
-                            height: 100,
+                            height: 130,
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
                                 colors: [Color(0xFFB380FF), Color(0xFFD0B3FF)],
@@ -393,6 +404,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
                                           .override(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.normal,
                                             fontFamily: 'Poppins',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBtnText,
@@ -403,6 +416,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
                                           .override(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold,
                                             fontFamily: 'Poppins',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBtnText,
@@ -420,9 +435,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(30, 30, 30, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
+                  //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
@@ -469,7 +485,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Container(
-                        width: 310,
+                        width: 330,
                         height: 150,
                         decoration: BoxDecoration(
                           color: Color(0xFFF4EDFF),
@@ -488,8 +504,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   iconRecordatorio,
                                   //'assets/icons/ICONS_RECORDATORIO.svg',
                                   //'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/aryy-version1-2ra5ai/assets/qe69xa3w7l3o/ICONS_RECORDATORIO.svg',
-                                  width: 60,
-                                  height: 60,
+                                  width: 80,
+                                  height: 80,
                                   fit: BoxFit.cover,
                                 ),
                               ],
@@ -511,6 +527,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .subtitle1
                                               .override(
+                                                fontSize: 20,
                                                 fontFamily: 'Poppins',
                                                 color: Color(0xFF7900FF),
                                               ),
@@ -592,6 +609,53 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             ],
           ),
         ),
+      ),
+
+      bottomNavigationBar: CurvedNavigationBar(
+        color: HexColor("#7900ff"),
+        //color: Colors.purple,
+        backgroundColor: Colors.white,
+        //buttonBackgroundColor: Colors.white,
+        buttonBackgroundColor: HexColor("b380ff"),
+        height: 50,
+        items: <Widget>[
+          Icon(
+            Icons.calendar_month,
+            size: 20,
+            //color: HexColor("#4f565f"),
+            color: Colors.white,
+          ),
+          Icon(
+            Icons.medical_services,
+            size: 20,
+            //color: HexColor("#4f565f"),
+            color: Colors.white,
+          ),
+          Icon(
+            Icons.add,
+            size: 20,
+            //color: HexColor("#4f565f"),
+            color: Colors.white,
+          ),
+          Icon(
+            Icons.shopping_cart,
+            size: 20,
+            //color: HexColor("#4f565f"),
+            color: Colors.white,
+          ),
+          Icon(
+            Icons.person,
+            size: 20,
+            //color: HexColor("#4f565f"),
+            color: Colors.white,
+          ),
+        ],
+        animationDuration: Duration(milliseconds: 200),
+        //index: 2,
+        animationCurve: Curves.bounceInOut,
+        onTap: (index) {
+          debugPrint("current Index is $index");
+        },
       ),
     );
   }
